@@ -1,0 +1,249 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  data-theme="light"
+  class="bg-white text-black"
+  style="font-family: Poppins; -webkit-print-color-adjust: exact"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CBT Aplication - {{ title }}</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'img/favicon.ico' %}"
+    />
+
+    <!-- css framework -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="leading-tight text-align">
+    {% for siswa in data %}
+    <div class="flex gap-16 text-center items-center justify-center">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Lambang_Kabupaten_Lampung_Tengah.png/86px-Lambang_Kabupaten_Lampung_Tengah.png"
+      />
+
+      <div>
+        <div class="font-bold">
+          <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
+          <h2>DINAS PENDIDIKAN DAN KEBUDAYAAN</h2>
+          <h2>UPTD SATUAN PENDIDIKAN</h2>
+          <h2>SEKOLAH DASAR NEGERI 2 LEMPUYANG BANDAR</h2>
+          <h2>KECAMATA WAY PENGUBUAN</h2>
+        </div>
+        <p class="text-sm italic">
+          Jl. 01 Bandar Rejo, Lempuyang Bandar, Kode Pos 34165
+        </p>
+      </div>
+
+      <img
+        src="https://disdikbud.banyuasinkab.go.id/wp-content/uploads/sites/269/2022/11/Logo-Tut-Wuri-Handayani-PNG-Warna.png"
+        width="120px"
+        height="150px"
+      />
+    </div>
+
+    <div class="mt-6 flex flex-col gap-1">
+      <div class="w-full h-[3px] bg-black"></div>
+      <div class="h-[2px] bg-black w-[98%] m-auto"></div>
+    </div>
+
+    <br />
+
+    <p class="font-bold text-center">SURAT KETERANGAN KELULUSAN</p>
+    <p class="text-center">
+      Nomor : 420/{{ no_surat|add:forloop.counter }}/C.15/D.a.VI.01/2024
+    </p>
+
+    <br />
+
+    <p>
+      Yang bertanda tangan di bawah ini, Kepala UPT SDN 2 Lempuyang Bandar
+      menerangkan bahwa :
+    </p>
+
+    <div class="flex gap-12">
+      <div>
+        <p class="indent-8">Nama</p>
+        <p class="indent-8">Tempat/Tanggal Lahir</p>
+        <p class="indent-8">Nomor Induk Siswa</p>
+        <p class="indent-8">NISN</p>
+      </div>
+      <div>
+        <p class="font-bold">: {{ siswa.nama }}</p>
+        <p>: {{ siswa.tempat_tanggal_lahir }}</p>
+        <p>: {{ siswa.nomor_induk_siswa }}</p>
+        <p>: {{ siswa.nisn }}</p>
+      </div>
+    </div>
+
+    <br />
+
+    <p>Berdasarkan :</p>
+
+    <ol class="list-decimal indent-6">
+      <li>
+        1. Keputusan Kepala Badan Standar, Kurikulum dan Asesmen Pendidikan no.
+        012A Tahun 2024 tentang Perubahan Atas keputusan Kepala Badan Standar,
+        Kurikulum dan Asesmen Pendidikan Kementerian Pendidikan, Kebudayaan,
+        Riset dan Teknologi No. 010 Tahun 2024 Tentang Pedoman Pengelolaan
+        Blangko Ijazah Pendidikan Dasar dan Pendidikan Menengah Tahun Pelajaran
+        2023/2024.
+      </li>
+      <li>
+        2. Keputusan Kepala UPT SDN 2 Lempuyang Bandar Nomor :
+        420/{{no_surat|add:forloop.counter }}/C.15/D.a.VI.01/2024 Tentang
+        Penetapan Kelulusan Peserta Didik Kelas VI Tahun Pelajaran 2023/2024.
+      </li>
+    </ol>
+
+    <br />
+
+    <p class="text-center">Menerangkan bahwa Siswa tersebut dinyatakan :</p>
+
+    <div
+      class="border px-4 py-2 font-bold text-xl w-max border-4 border-black m-auto"
+    >
+      LULUS
+    </div>
+
+    <p>Dengan daftar nilai sebagai berikut :</p>
+
+    <table class="border border-black m-auto">
+      <thead>
+        <tr>
+          <th class="border border-black w-10">No</th>
+          <th class="border border-black w-96">Mata Pelajaran</th>
+          <th class="border border-black w-20">Nilai</th>
+        </tr>
+      </thead>
+
+      <thead>
+        <tr>
+          <td class="border border-black" colspan="2">Kelompok A</td>
+          <td class="border border-black"></td>
+        </tr>
+        <tr>
+          <td class="border border-black">1</td>
+          <td class="border border-black">Pendidikan Agama dan Budi Pekerti</td>
+          <td class="border border-black text-center">
+            {{ siswa.pendidikan_agama }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">2</td>
+          <td class="border border-black">
+            Pendidikan Pancasila dan Kewarganegaraan
+          </td>
+          <td class="border border-black text-center">
+            {{ siswa.pendidikan_pancasila }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">3</td>
+          <td class="border border-black">Bahasa Indonesia</td>
+          <td class="border border-black text-center">
+            {{siswa.bahasa_indonesia}}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">4</td>
+          <td class="border border-black">Matematika</td>
+          <td class="border border-black text-center">
+            {{ siswa.matematika }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">5</td>
+          <td class="border border-black">Ilmu Pengetahuan Alam</td>
+          <td class="border border-black text-center">{{ siswa.ipa }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black">6</td>
+          <td class="border border-black">Ilmu Pengetahuan Sosial</td>
+          <td class="border border-black text-center">{{ siswa.ips }}</td>
+        </tr>
+        <tr>
+          <td class="border border-black" colspan="2">Kelompok B</td>
+          <td class="border border-black"></td>
+        </tr>
+        <tr>
+          <td class="border border-black">1</td>
+          <td class="border border-black">Seni Budaya dan Prakarya</td>
+          <td class="border border-black text-center">
+            {{ siswa.seni_budaya }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">2</td>
+          <td class="border border-black">
+            Pendidikan Jasmani, Olahraga, dan Kesehatan
+          </td>
+          <td class="border border-black text-center">
+            {{ siswa.penjasorkes }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black">3</td>
+          <td class="border border-black">Muatan Lokal</td>
+          <td class="border border-black"></td>
+        </tr>
+        <tr>
+          <td class="border border-black"></td>
+          <td class="border border-black">Bahasa Lampung</td>
+          <td class="border border-black text-center">
+            {{ siswa.bahasa_lampung }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black"></td>
+          <td class="border border-black">Pendidikan Anti Korupsi</td>
+          <td class="border border-black text-center">
+            {{ siswa.pendidikan_anti_korupsi }}
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-black text-center" colspan="2">Rata-rata</td>
+          <td class="border border-black text-center">
+            {{siswa.nilai_rata_rata }}
+          </td>
+        </tr>
+      </thead>
+    </table>
+
+    <p>
+      Demikianlah surat keterangan ini dibuat, agar dapat digunakan sebagaimana
+      mestinya.
+    </p>
+
+    <br />
+
+    <div class="flex justify-between mr-8">
+      <div></div>
+      <div>
+        <p>Way Pengubuan, 10 Juni 2024</p>
+        <p>Kepala Sekolah</p>
+        <br />
+        <br />
+        <br />
+        <p class="font-bold">TRI PUJI ASTUTI, S.Pd</p>
+        <p>NIP. 197302282008012012</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- script -->
+    <script src="{% static 'script/script.js' %}"></script>
+  </body>
+</html>
