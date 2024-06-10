@@ -3,7 +3,7 @@ from .models import Siswa
 
 
 def index(request):
-    data_siswa = Siswa.objects.all()
+    data_siswa = Siswa.objects.all().order_by('nama')
 
     for siswa in data_siswa:
         nilai_rata_rata = sum([
