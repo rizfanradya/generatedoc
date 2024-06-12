@@ -70,6 +70,8 @@
       menerangkan bahwa :
     </p>
 
+    <br />
+
     <div class="flex gap-12">
       <div>
         <p class="indent-8">Nama</p>
@@ -115,6 +117,8 @@
       LULUS
     </div>
 
+    <br />
+
     <p>Dengan daftar nilai sebagai berikut :</p>
 
     <table class="border border-black m-auto">
@@ -135,7 +139,7 @@
           <td class="border border-black">1</td>
           <td class="border border-black">Pendidikan Agama dan Budi Pekerti</td>
           <td class="border border-black text-center">
-            {{ siswa.pendidikan_agama }}
+            {{ siswa.pendidikan_agama|floatformat:2 }}
           </td>
         </tr>
         <tr>
@@ -144,32 +148,36 @@
             Pendidikan Pancasila dan Kewarganegaraan
           </td>
           <td class="border border-black text-center">
-            {{ siswa.pendidikan_pancasila }}
+            {{ siswa.pendidikan_pancasila|floatformat:2 }}
           </td>
         </tr>
         <tr>
           <td class="border border-black">3</td>
           <td class="border border-black">Bahasa Indonesia</td>
           <td class="border border-black text-center">
-            {{siswa.bahasa_indonesia}}
+            {{siswa.bahasa_indonesia|floatformat:2}}
           </td>
         </tr>
         <tr>
           <td class="border border-black">4</td>
           <td class="border border-black">Matematika</td>
           <td class="border border-black text-center">
-            {{ siswa.matematika }}
+            {{ siswa.matematika|floatformat:2 }}
           </td>
         </tr>
         <tr>
           <td class="border border-black">5</td>
           <td class="border border-black">Ilmu Pengetahuan Alam</td>
-          <td class="border border-black text-center">{{ siswa.ipa }}</td>
+          <td class="border border-black text-center">
+            {{ siswa.ipa|floatformat:2 }}
+          </td>
         </tr>
         <tr>
           <td class="border border-black">6</td>
           <td class="border border-black">Ilmu Pengetahuan Sosial</td>
-          <td class="border border-black text-center">{{ siswa.ips }}</td>
+          <td class="border border-black text-center">
+            {{ siswa.ips|floatformat:2 }}
+          </td>
         </tr>
         <tr>
           <td class="border border-black" colspan="2">Kelompok B</td>
@@ -179,7 +187,7 @@
           <td class="border border-black">1</td>
           <td class="border border-black">Seni Budaya dan Prakarya</td>
           <td class="border border-black text-center">
-            {{ siswa.seni_budaya }}
+            {{ siswa.seni_budaya|floatformat:2 }}
           </td>
         </tr>
         <tr>
@@ -188,7 +196,7 @@
             Pendidikan Jasmani, Olahraga, dan Kesehatan
           </td>
           <td class="border border-black text-center">
-            {{ siswa.penjasorkes }}
+            {{ siswa.penjasorkes|floatformat:2 }}
           </td>
         </tr>
         <tr>
@@ -200,24 +208,26 @@
           <td class="border border-black"></td>
           <td class="border border-black">Bahasa Lampung</td>
           <td class="border border-black text-center">
-            {{ siswa.bahasa_lampung }}
+            {{ siswa.bahasa_lampung|floatformat:2 }}
           </td>
         </tr>
         <tr>
           <td class="border border-black"></td>
           <td class="border border-black">Pendidikan Anti Korupsi</td>
           <td class="border border-black text-center">
-            {{ siswa.pendidikan_anti_korupsi }}
+            {{ siswa.pendidikan_anti_korupsi|floatformat:2 }}
           </td>
         </tr>
         <tr>
           <td class="border border-black text-center" colspan="2">Rata-rata</td>
-          <td class="border border-black text-center">
-            {{siswa.nilai_rata_rata }}
+          <td class="border border-black text-center font-bold">
+            {{siswa.nilai_rata_rata|floatformat:2 }}
           </td>
         </tr>
       </thead>
     </table>
+
+    <br />
 
     <p>
       Demikianlah surat keterangan ini dibuat, agar dapat digunakan sebagaimana
@@ -231,6 +241,7 @@
       <div>
         <p>Way Pengubuan, 10 Juni 2024</p>
         <p>Kepala Sekolah</p>
+        <br />
         <br />
         <br />
         <br />
