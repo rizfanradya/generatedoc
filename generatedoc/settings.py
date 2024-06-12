@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'generatedoc',
         'USER': 'root',
-        'PASSWORD': 'mysql',
+        'PASSWORD': 'root',
     }
 }
 
